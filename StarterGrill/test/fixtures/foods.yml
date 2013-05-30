@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  name: MyString
+  describe: MyString
+  price: 1.5
+
+two:
+  type: 
+  name: MyString
+  describe: MyString
+  price: 1.5

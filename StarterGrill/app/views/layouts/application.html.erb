@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StarterGrill</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">StarterGrill</a>
+<nav>
+    <%= link_to "Menu", menu_url %> |
+    <%= link_to "Location", location_url %> |
+    <%= link_to "Reservation", reservations_url %> |
+    <%= link_to "Online Ordering", orders_url %> |
+    <%= link_to "Help", help_url %>
+  </nav>
+<% if session[:user_id] %>
+  <li><%= link_to "My Profile", user_url(session[:user_id]) %></li>
+  <li><%= link_to "Sign Out", sign_out_url %></li>
+<% else %>
+  <li><%= link_to "Sign Me Up!", new_user_url %></li>
+  <li><%= link_to "Sign In", sign_in_url %></li>
+<% end %>
+<hr>
+<%= yield %>
+<hr>
+<footer>
+  <p>&copy;2013 StarterGrill.  Got a comment or suggestion?  Keep it to yourself!</p>
+</footer>
+</body>
+</html>
